@@ -1,0 +1,69 @@
+<router-outlet />
+<div class="container">
+    <h2>Tik-Tac-Toe</h2>
+    <p class="nextPlayer">
+        Next Player: {{ nextPlayer }}
+    </p>
+    <p *ngIf="gameOver" class="winnerItem , nextPlayer">
+        Winner: {{ winner }}
+    </p>
+    <div class="gameBoard">
+        <div class="row">
+            <div class="gameItem">
+                <button class="button" (click)="clickButton(0)">
+                    <img class="img" [src]="board[0] === ' ' ? './assets/none.svg' : './assets/' + board[0] + '.svg'" [attr.alt]="board[0]">
+                </button>
+            </div>
+            <div class="gameItem">
+                <button class="button" (click)="clickButton(1)">
+                    <img class="img" [src]="board[1] === ' ' ? './assets/none.svg' : './assets/' + board[1] + '.svg'" [attr.alt]="board[1]">
+                </button>
+            </div>
+            <div class="gameItem">
+                <button class="button" (click)="clickButton(2)">
+                    <img class="img" [src]="board[2] === ' ' ? './assets/none.svg' : './assets/' + board[2] + '.svg'" [attr.alt]="board[2]">
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="gameItem">
+                <button class="button" (click)="clickButton(3)">
+                    <img class="img" [src]="board[3] === ' ' ? './assets/none.svg' : './assets/' + board[3] + '.svg'" [attr.alt]="board[3]">
+                </button>
+            </div>
+            <div class="gameItem">
+                <button class="button" (click)="clickButton(4)">
+                    <img class="img" [src]="board[4] === ' ' ? './assets/none.svg' : './assets/' + board[4] + '.svg'" [attr.alt]="board[4]">
+                </button>
+            </div>
+            <div class="gameItem">
+                <button class="button" (click)="clickButton(5)">
+                    <img class="img" [src]="board[5] === ' ' ? './assets/none.svg' : './assets/' + board[5] + '.svg'" [attr.alt]="board[5]">
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="gameItem">
+                <button class="button" (click)="clickButton(6)">
+                    <img class="img" [src]="board[6] === ' ' ? './assets/none.svg' : './assets/' + board[6] + '.svg'" [attr.alt]="board[6]">
+                </button>
+            </div>
+            <div class="gameItem">
+                <button class="button" (click)="clickButton(7)">
+                    <img class="img" [src]="board[7] === ' ' ? './assets/none.svg' : './assets/' + board[7] + '.svg'" [attr.alt]="board[7]">
+                </button>
+            </div>
+            <div class="gameItem">
+                <button class="button" (click)="clickButton(8)">
+                    <img class="img" [src]="board[8] === ' ' ? './assets/none.svg' : './assets/' + board[8] + '.svg'" [attr.alt]="board[8]">
+                </button>                
+            </div>
+        </div>
+        <div>
+            <button *ngIf="gameOver" class="buttonRestart" (click)="resetGame()">
+                RESET GAME
+            </button>
+        </div>
+    </div>
+    
+</div>
